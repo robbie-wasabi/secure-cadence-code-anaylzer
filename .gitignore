@@ -7,3 +7,4 @@ node_modules/
 output.csv
 output.xls
 output/*
+flow.json

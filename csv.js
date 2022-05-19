@@ -57,7 +57,6 @@ function readCdcFiles(dir) {
         const location = parseLocation(n, dir)
         const code = fs.readFileSync(d + n, "ascii")
         const standardized = replaceImports(code)
-        console.log(standardized)
 
         return { location, code: standardized }
     })
