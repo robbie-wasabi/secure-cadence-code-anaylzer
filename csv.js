@@ -52,9 +52,9 @@ function readDirs(dirs) {
     })
 
     const csv = new ObjectsToCsv(data)
-    await csv.toDisk('./output.csv')
+    await csv.toDisk('./output/output.csv')
 
-    exec('cadence-analyzer -csv ./output.csv', (err, stdout, stderr) => {
+    exec('cadence-analyzer -csv ./output/output.csv', (err, stdout, stderr) => {
         if (err) {
             //some err occurred
             console.error(err)

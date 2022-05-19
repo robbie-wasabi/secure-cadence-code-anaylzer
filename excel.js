@@ -46,8 +46,19 @@ function readDirs(dirs) {
         ]
     )
 
-    fs.writeFile("ouput.xls", report, "ascii", (res) => {
+    fs.writeFileSync("./output/output.xls", report, "ascii", (res) => {
         console.log(res)
+    })
+
+    exec('cadence-analyzer -csv ./output/output.xls', (err, stdout, stderr) => {
+        if (err) {
+            //some err occurred
+            console.error(err)
+        } else {
+            // the *entire* stdout and stderr (buffered)
+            console.log(`stdout: ${stdout}`)
+            console.log(`stderr: ${stderr}`)
+        }
     })
 })()
 
