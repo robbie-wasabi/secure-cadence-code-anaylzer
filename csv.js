@@ -3,7 +3,7 @@ const ObjectsToCsv = require('objects-to-csv')
 const { exec } = require('child_process')
 
 // set to correct dirs
-const dirs = ["contract", "transaction", "script"]
+const dirs = ["common", "contract", , "transaction", "script"]
 
 function parseLocation(name, dir) {
     let prefix = ""
@@ -12,12 +12,16 @@ function parseLocation(name, dir) {
             prefix = "A"
             break
         case dirs[1]:
-            prefix = "t"
+            prefix = "A"
             break
         case dirs[2]:
+            prefix = "t"
+            break
+        case dirs[3]:
             prefix = "s"
             break
         default:
+            console.log(dir)
             break
     }
     const address = "0000000000000000" // I don't think this matters
@@ -30,7 +34,8 @@ function readCdcFiles(dir) {
     const d = `${dir}/`
     return fs.readdirSync(d).map(n => {
         const location = parseLocation(n, dir)
-        return { location, code: fs.readFileSync(d + n, "ascii") }
+        const code = fs.readFileSync(d + n, "ascii")
+        return { location, code: code }
     })
 }
 
