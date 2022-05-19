@@ -4,6 +4,7 @@ const { exec } = require('child_process')
 
 // set to correct dirs
 const dirs = ["common", "contract", , "transaction", "script"]
+const blankAddress = "0000000000000000"
 
 function parseLocation(name, dir) {
     let prefix = ""
@@ -24,10 +25,30 @@ function parseLocation(name, dir) {
             console.log(dir)
             break
     }
-    const address = "0000000000000000" // I don't think this matters
     const substring = ".cdc"
     if (!name.includes(substring)) return name
-    return `${prefix}.${address}.${name.replace(substring, "")}`
+    return `${prefix}.${blankAddress}.${name.replace(substring, "")}`
+}
+
+function replaceImports(file) {
+    const lines = file.split("\n")
+    const editedLines = lines.map((l) => {
+        // console.log(l)
+        if (l.includes("import") && l.includes("from")) {
+            const segs = l.split(" ")
+            let newLine = ""
+            segs.forEach(s => {
+                if (s.startsWith("0x") || s.startsWith(`"./`)) {
+                    newLine = newLine.concat(`0x${blankAddress} `)
+                    return
+                }
+                newLine = newLine.concat(`${s} `)
+            })
+            return newLine
+        }
+        return l
+    })
+    return editedLines.join("\n")
 }
 
 function readCdcFiles(dir) {
@@ -35,7 +56,10 @@ function readCdcFiles(dir) {
     return fs.readdirSync(d).map(n => {
         const location = parseLocation(n, dir)
         const code = fs.readFileSync(d + n, "ascii")
-        return { location, code: code }
+        const standardized = replaceImports(code)
+        console.log(standardized)
+
+        return { location, code: standardized }
     })
 }
 
