@@ -1,13 +1,10 @@
-common/*
-contract/*
-script/*
-transaction/*
+.vscode
+contract
+script
+transaction
 node_modules/
 .DS_STORE
 output.csv
 output.xls
 output/*
 flow.json
-
-other_common/
-other_contracts/
