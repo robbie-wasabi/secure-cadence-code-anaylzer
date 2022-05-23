@@ -8,3 +8,6 @@ output.csv
 output.xls
 output/*
 flow.json
+
+other_common/
+other_contracts/

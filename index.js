@@ -2,27 +2,27 @@ const fs = require("fs")
 const ObjectsToCsv = require('objects-to-csv')
 const { exec } = require('child_process')
 
-// set to correct dirs
-const dirs = ["common", "contract", , "transaction", "script"]
+const CdcFileType = {
+    CONTRACT: "contract",
+    TRANSACTION: "transaction",
+    SCRIPT: "script"
+}
+
 const blankAddress = "0000000000000000"
 
 function parseLocation(name, dir) {
     let prefix = ""
     switch (dir) {
-        case dirs[0]:
+        case CdcFileType.CONTRACT:
             prefix = "A"
             break
-        case dirs[1]:
-            prefix = "A"
-            break
-        case dirs[2]:
+        case CdcFileType.TRANSACTION:
             prefix = "t"
             break
-        case dirs[3]:
+        case CdcFileType.SCRIPT:
             prefix = "s"
             break
         default:
-            console.log(dir)
             break
     }
     const substring = ".cdc"
@@ -38,7 +38,7 @@ function replaceImports(file) {
             const segs = l.split(" ")
             let newLine = ""
             segs.forEach(s => {
-                if (s.startsWith("0x") || s.startsWith(`"./`)) {
+                if (s.startsWith("0x") || s.startsWith(`"./`) || s.startsWith(`"../`)) {
                     newLine = newLine.concat(`0x${blankAddress} `)
                     return
                 }
@@ -62,24 +62,20 @@ function readCdcFiles(dir) {
     })
 }
 
-function readDirs(dirs) {
-    return dirs.map(dir => {
-        return readCdcFiles(dir)
-    })
-}
+// function readDirs(dirs) {
+//     return dirs.map(dir => {
+//         return readCdcFiles(dir)
+//     })
+// }
 
 (async () => {
-    const datasets = readDirs(dirs)
+    const contracts = readCdcFiles("contract")
+    const transactions = readCdcFiles("transaction")
+    const scripts = readCdcFiles("script")
 
-    // map data sets to a 1d array
-    const data = []
-    datasets.forEach(group => {
-        group.forEach(d => {
-            data.push(d)
-        })
-    })
+    const datasets = [...contracts, ...transactions, ...scripts]
 
-    const csv = new ObjectsToCsv(data)
+    const csv = new ObjectsToCsv(datasets)
     await csv.toDisk('./output/output.csv')
 
     exec('cadence-analyzer -csv ./output/output.csv', (err, stdout, stderr) => {
