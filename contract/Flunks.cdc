@@ -6,7 +6,6 @@
 import NonFungibleToken from "./NonFungibleToken.cdc"
 import MetadataViews from "./MetadataViews.cdc"
 
-
 pub contract Flunks: NonFungibleToken {
 
   pub event ContractInitialized()

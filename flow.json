@@ -89,6 +89,12 @@
       "aliases": {
         "emulator": "0xf8d6e0586b0a20c7"
       }
+    },
+    "AllDay": {
+      "source": "./contract/AllDay.cdc",
+      "aliases": {
+        "emulator": "0xf8d6e0586b0a20c7"
+      }
     }
   },
   "networks": {
@@ -113,7 +119,8 @@
         "Profile",
         "SNKRHUDNFT",
         "SNKRHUDNFTPrimarySaleMinter",
-        "DapperUtilityCoin"
+        "DapperUtilityCoin",
+        "AllDay"
       ]
     }
   }

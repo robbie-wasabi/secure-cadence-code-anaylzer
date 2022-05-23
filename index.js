@@ -73,9 +73,10 @@ function readCdcFiles(dir) {
     const transactions = readCdcFiles("transaction")
     const scripts = readCdcFiles("script")
 
-    let datasets = [...contracts]
-    // datasets = datasets.push(...transactions)
-    // datasets = datasets.push(...scripts)
+    let datasets = []
+    datasets.push(...contracts)
+    datasets.push(...transactions)
+    datasets.push(...scripts)
 
     const csv = new ObjectsToCsv(datasets)
     await csv.toDisk('./output/output.csv')

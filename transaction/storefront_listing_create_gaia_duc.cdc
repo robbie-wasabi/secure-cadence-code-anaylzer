@@ -4,7 +4,6 @@
 // import Gaia from 0x8b148183c28ff88f
 // import NFTStorefront from 0x4eb8a10cb9f87357
 
-
 // todo: remove
 import FungibleToken from "../contract/FungibleToken.cdc"
 import NonFungibleToken from "../contract/NonFungibleToken.cdc"

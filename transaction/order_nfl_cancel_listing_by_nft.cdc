@@ -18,7 +18,6 @@ transaction(nftID: UInt64) {
 
         self.orderAddress = acct.address
 
-
         // find all existing listings with matching nft id 
         self.listings = []
         let listingIDs = self.storefront.getListingIDs()
