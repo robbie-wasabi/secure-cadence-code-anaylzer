@@ -1,0 +1,107 @@
+{
+  "emulators": {
+    "default": {
+      "port": 3569,
+      "serviceAccount": "emulator-svc"
+    }
+  },
+  "contracts": {
+    "NonFungibleToken": {
+      "source": "./contract/NonFungibleToken.cdc",
+      "aliases": {
+        "emulator": "0xf8d6e0586b0a20c7"
+      }
+    },
+    "FungibleToken": {
+      "source": "./contract/FungibleToken.cdc",
+      "aliases": {
+        "emulator": "0xee82856bf20e2aa6"
+      }
+    },
+    "NFTStorefront": {
+      "source": "./contract/NFTStorefront.cdc",
+      "aliases": {
+        "emulator": "0xf8d6e0586b0a20c7"
+      }
+    },
+    "FlowToken": {
+      "source": "./contract/FlowToken.cdc",
+      "aliases": {
+        "emulator": "0x0ae53cb6e3f42a79"
+      }
+    },
+    "Profile": {
+      "source": "./contract/Profile.cdc",
+      "aliases": {
+        "emulator": "0xf8d6e0586b0a20c7"
+      }
+    },
+    "Gaia": {
+      "source": "./contract/Gaia.cdc",
+      "aliases": {
+        "emulator": "0x01cf0e2f2f715450"
+      }
+    },
+    "MetadataViews": {
+      "source": "./contract/MetadataViews.cdc",
+      "aliases": {
+        "emulator": "0xf8d6e0586b0a20c7"
+      }
+    },
+    "GaiaPrimarySale": {
+      "source": "./contract/GaiaPrimarySale.cdc",
+      "aliases": {
+        "emulator": "0xf8d6e0586b0a20c7"
+      }
+    },
+    "GaiaFee": {
+      "source": "./contract/GaiaFee.cdc",
+      "aliases": {
+        "emulator": "0xf8d6e0586b0a20c7"
+      }
+    },
+    "GaiaOrder": {
+      "source": "./contract/GaiaOrder.cdc",
+      "aliases": {
+        "emulator": "0xf8d6e0586b0a20c7"
+      }
+    },
+    "SNKRHUDNFTPrimarySaleMinter": {
+      "source": "./contract/SNKRHUDNFTPrimarySaleMinter.cdc",
+      "aliases": {
+        "emulator": "0xf8d6e0586b0a20c7"
+      }
+    },
+    "SNKRHUDNFT": {
+      "source": "./contract/SNKRHUDNFT.cdc",
+      "aliases": {
+        "emulator": "0xf8d6e0586b0a20c7"
+      }
+    }
+  },
+  "networks": {
+    "emulator": "127.0.0.1:3569"
+  },
+  "accounts": {
+    "emulator-svc": {
+      "address": "0xf8d6e0586b0a20c7",
+      "key": "429d9b80e449bf25482fe21555c7d9b9967be74e89dd2b94ca81ae62d7627e17"
+    }
+  },
+  "deployments": {
+    "emulator": {
+      "emulator-svc": [
+        "Gaia",
+        "GaiaFee",
+        "GaiaOrder",
+        "GaiaPrimarySale",
+        "MetadataViews",
+        "NFTStorefront",
+        "NonFungibleToken",
+        "Profile",
+        "SNKRHUDNFT",
+        "SNKRHUDNFTPrimarySaleMinter"
+      ]
+    }
+  }
+}
