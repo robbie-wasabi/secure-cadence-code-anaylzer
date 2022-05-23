@@ -1,6 +1,11 @@
-import MetadataViews from 0x1d7e57aa55817448
-import NFTStorefront from 0x4eb8a10cb9f87357
-import Gaia from 0x8b148183c28ff88f
+// import MetadataViews from 0x1d7e57aa55817448
+// import NFTStorefront from 0x4eb8a10cb9f87357
+// import Gaia from 0x8b148183c28ff88f
+
+// todo: remove
+import MetadataViews from "../contract/MetadataViews.cdc"
+import NFTStorefront from "../contract/NFTStorefront.cdc"
+import Gaia from "../contract/Gaia.cdc"
 
 pub struct PurchaseData {
     pub let id: UInt64

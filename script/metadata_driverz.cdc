@@ -1,6 +1,11 @@
-import MetadataViews from 0x1d7e57aa55817448
-import NFTStorefront from 0x4eb8a10cb9f87357
-import DriverzNFT from 0xa039bd7d55a96c0c
+// import MetadataViews from 0x1d7e57aa55817448
+// import NFTStorefront from 0x4eb8a10cb9f87357
+// import DriverzNFT from 0xa039bd7d55a96c0c
+
+// todo: remove
+import MetadataViews from "../contract/MetadataViews.cdc"
+import NFTStorefront from "../contract/NFTStorefront.cdc"
+import DriverzNFT from "../contract/DriverzNFT.cdc"
 
 pub struct PurchaseData {
     pub let id: UInt64

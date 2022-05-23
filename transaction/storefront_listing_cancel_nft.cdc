@@ -1,4 +1,6 @@
-import NFTStorefront from 0x4eb8a10cb9f87357
+// import NFTStorefront from 0x4eb8a10cb9f87357
+
+import NFTStorefront from "../contract/NFTStorefront.cdc"
 
 transaction(listingResourceID: UInt64, signatureExpiration: UInt64, signature: String) {
     let storefront: &NFTStorefront.Storefront{NFTStorefront.StorefrontManager}

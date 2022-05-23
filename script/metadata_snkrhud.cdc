@@ -1,6 +1,11 @@
-import MetadataViews from 0x1d7e57aa55817448
-import NFTStorefront from 0x4eb8a10cb9f87357
-import SNKRHUDNFT from 0x80af1db15aa6535a
+// import MetadataViews from 0x1d7e57aa55817448
+// import NFTStorefront from 0x4eb8a10cb9f87357
+// import SNKRHUDNFT from 0x80af1db15aa6535a
+
+// todo: remove
+import MetadataViews from "../contract/MetadataViews.cdc"
+import NFTStorefront from "../contract/NFTStorefront.cdc"
+import SNKRHUDNFT from "../contract/SNKRHUDNFT.cdc"
 
 pub struct PurchaseData {
     pub let id: UInt64

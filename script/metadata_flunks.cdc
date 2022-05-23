@@ -1,6 +1,11 @@
-import MetadataViews from 0x1d7e57aa55817448
-import NFTStorefront from 0x4eb8a10cb9f87357
-import Flunks from 0x807c3d470888cc48
+// import MetadataViews from 0x1d7e57aa55817448
+// import NFTStorefront from 0x4eb8a10cb9f87357
+// import Flunks from 0x807c3d470888cc48
+
+// todo: remove
+import MetadataViews from "../contract/MetadataViews.cdc"
+import NFTStorefront from "../contract/NFTStorefront.cdc"
+import Flunks from "../contract/Flunks.cdc"
 
 pub struct PurchaseData {
     pub let id: UInt64

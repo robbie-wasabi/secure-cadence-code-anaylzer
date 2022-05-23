@@ -72,8 +72,20 @@
         "emulator": "0xf8d6e0586b0a20c7"
       }
     },
+    "Flunks": {
+      "source": "./contract/Flunks.cdc",
+      "aliases": {
+        "emulator": "0xf8d6e0586b0a20c7"
+      }
+    },
     "SNKRHUDNFT": {
       "source": "./contract/SNKRHUDNFT.cdc",
+      "aliases": {
+        "emulator": "0xf8d6e0586b0a20c7"
+      }
+    },
+    "DapperUtilityCoin": {
+      "source": "./contract/DapperUtilityCoin.cdc",
       "aliases": {
         "emulator": "0xf8d6e0586b0a20c7"
       }
@@ -100,7 +112,8 @@
         "NonFungibleToken",
         "Profile",
         "SNKRHUDNFT",
-        "SNKRHUDNFTPrimarySaleMinter"
+        "SNKRHUDNFTPrimarySaleMinter",
+        "DapperUtilityCoin"
       ]
     }
   }

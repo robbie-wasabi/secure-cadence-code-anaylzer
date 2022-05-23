@@ -1,8 +1,15 @@
-import GaiaPrimarySale from 0x01ddf82c652e36ef
-import NonFungibleToken from 0x1d7e57aa55817448
-import FungibleToken from 0xf233dcee88fe0abe
-import SNKRHUDNFT from 0x80af1db15aa6535a
-import DapperUtilityCoin from 0xead892083b3e2c6c
+// import GaiaPrimarySale from 0x01ddf82c652e36ef
+// import NonFungibleToken from 0x1d7e57aa55817448
+// import FungibleToken from 0xf233dcee88fe0abe
+// import SNKRHUDNFT from 0x80af1db15aa6535a
+// import DapperUtilityCoin from 0xead892083b3e2c6c
+
+// todo: remove
+import GaiaPrimarySale from "../contract/GaiaPrimarySale.cdc"
+import NonFungibleToken from "../contract/NonFungibleToken.cdc"
+import FungibleToken from "../contract/FungibleToken.cdc"
+import SNKRHUDNFT from "../contract/SNKRHUDNFT.cdc"
+import DapperUtilityCoin from "../contract/DapperUtilityCoin.cdc"
 
 transaction(
     marketplaceAddress: Address,

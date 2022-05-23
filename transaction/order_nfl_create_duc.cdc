@@ -1,10 +1,19 @@
-import GaiaOrder from 0x8b148183c28ff88f
-import GaiaFee from 0x8b148183c28ff88f
-import AllDay from 0xe4cf4bdc1751c65d
-import NFTStorefront from 0x4eb8a10cb9f87357
-import NonFungibleToken from 0x1d7e57aa55817448
-import DapperUtilityCoin from 0xead892083b3e2c6c
-import FungibleToken from 0xf233dcee88fe0abe
+// import GaiaOrder from 0x8b148183c28ff88f
+// import GaiaFee from 0x8b148183c28ff88f
+// import AllDay from 0xe4cf4bdc1751c65d
+// import NFTStorefront from 0x4eb8a10cb9f87357
+// import NonFungibleToken from 0x1d7e57aa55817448
+// import DapperUtilityCoin from 0xead892083b3e2c6c
+// import FungibleToken from 0xf233dcee88fe0abe
+
+// todo: remove
+import GaiaOrder from "../contract/GaiaOrder.cdc"
+import GaiaFee from "../contract/GaiaFee.cdc"
+import AllDay from "../contract/AllDay.cdc"
+import NFTStorefront from "../contract/NFTStorefront.cdc"
+import NonFungibleToken from "../contract/NonFungibleToken.cdc"
+import DapperUtilityCoin from "../contract/DapperUtilityCoin.cdc"
+import FungibleToken from "../contract/FungibleToken.cdc"
 
 transaction(nftID: UInt64, price: UFix64) {
     let nftProvider: Capability<&{NonFungibleToken.Provider, NonFungibleToken.CollectionPublic}>

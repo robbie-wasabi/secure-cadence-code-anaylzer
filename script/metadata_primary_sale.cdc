@@ -1,4 +1,4 @@
-import GaiaPrimarySale from 0x01ddf82c652e36ef
+import GaiaPrimarySale from "../contract/GaiaPrimarySale.cdc"
 
 pub struct PurchaseData {
     pub let id: UInt64

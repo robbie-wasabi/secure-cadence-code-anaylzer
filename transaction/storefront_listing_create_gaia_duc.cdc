@@ -1,8 +1,16 @@
-import FungibleToken from 0xf233dcee88fe0abe
-import NonFungibleToken from 0x1d7e57aa55817448
-import DapperUtilityCoin from 0xead892083b3e2c6c
-import Gaia from 0x8b148183c28ff88f
-import NFTStorefront from 0x4eb8a10cb9f87357
+// import FungibleToken from 0xf233dcee88fe0abe
+// import NonFungibleToken from 0x1d7e57aa55817448
+// import DapperUtilityCoin from 0xead892083b3e2c6c
+// import Gaia from 0x8b148183c28ff88f
+// import NFTStorefront from 0x4eb8a10cb9f87357
+
+
+// todo: remove
+import FungibleToken from "../contract/FungibleToken.cdc"
+import NonFungibleToken from "../contract/NonFungibleToken.cdc"
+import DapperUtilityCoin from "../contract/DapperUtilityCoin.cdc"
+import Gaia from "../contract/Gaia.cdc"
+import NFTStorefront from "../contract/NFTStorefront.cdc"
 
 transaction(saleItemID: UInt64, saleItemPrice: UFix64, cutAddresses: [Address], cutPercentages: [UFix64], signatureExpiration: UInt64, signature: String) {
     let gaiaProvider: Capability<&{NonFungibleToken.Provider, NonFungibleToken.CollectionPublic}>

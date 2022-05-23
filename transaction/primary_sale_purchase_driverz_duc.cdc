@@ -1,8 +1,16 @@
-import GaiaPrimarySale from 0x01ddf82c652e36ef
-import NonFungibleToken from 0x1d7e57aa55817448
-import FungibleToken from 0xf233dcee88fe0abe
-import DriverzNFT from 0xa039bd7d55a96c0c
-import DapperUtilityCoin from 0xead892083b3e2c6c
+// import GaiaPrimarySale from 0x01ddf82c652e36ef
+// import NonFungibleToken from 0x1d7e57aa55817448
+// import FungibleToken from 0xf233dcee88fe0abe
+// import DriverzNFT from 0xa039bd7d55a96c0c
+// import DapperUtilityCoin from 0xead892083b3e2c6c
+
+// todo: remove
+import GaiaPrimarySale from "../contract/GaiaPrimarySale.cdc"
+import NonFungibleToken from "../contract/NonFungibleToken.cdc"
+import FungibleToken from "../contract/FungibleToken.cdc"
+import DriverzNFT from "../contract/DriverzNFT.cdc"
+import DapperUtilityCoin from "../contract/DapperUtilityCoin.cdc"
+
 
 transaction(
     primarySaleAddress: Address,

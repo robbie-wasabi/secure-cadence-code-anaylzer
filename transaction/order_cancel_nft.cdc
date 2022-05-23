@@ -1,6 +1,11 @@
-import GaiaOrder from 0x8b148183c28ff88f
-import GaiaFee from 0x8b148183c28ff88f
-import NFTStorefront from 0x4eb8a10cb9f87357
+// import GaiaOrder from 0x8b148183c28ff88f
+// import GaiaFee from 0x8b148183c28ff88f
+// import NFTStorefront from 0x4eb8a10cb9f87357
+
+// todo: remove
+import GaiaOrder from "../contract/GaiaOrder.cdc"
+import GaiaFee from "../contract/GaiaFee.cdc"
+import NFTStorefront from "../contract/NFTStorefront.cdc"
 
 transaction(nftID: UInt64) {
     let storefront: &NFTStorefront.Storefront
